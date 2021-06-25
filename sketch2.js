@@ -101,7 +101,7 @@ function startStream() {
 
   vid.position(0, 0)
   button.remove()
-
+  select("#accept").remove()
   classifyVideo()
 
 
