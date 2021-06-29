@@ -96,7 +96,7 @@ function setup() {
 //check orientation rather than platform
 function startStream() {
 
-  if (navigator.platform == "iPhone") {
+  if (displayWidth < displayHeight) {
     vid = createCapture(VIDEO, constraints)
   } else {
 
