@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
+
 }
 
 canvas {
@@ -9,99 +10,111 @@ canvas {
 
 video {
   z-index: -1000;
-  margin-top: 20%;
-}
-
-.awrd {
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 500;
-  color: #444444;
-  font-size: 25px;
-  text-align: center;
-  margin-left: auto;
-  margin-top: 65%;
-  margin-bottom: auto;
-  margin-right: auto;
-  width: 80%;
-  background-color: rgba(255,255,255,0.7)
-  /* height: 50% */
+  margin-top: 4.5rem;
 }
 
 #introduction {
-  font-family: 'Rajdhani', sans-serif;
-  /* text-align: center; */
+  font-family: 'Alegreya', serif;
   color: #444444;
-  font-size: 25px;
-  margin-left: 20px;
-  width: 80%
 }
 
 #introduction h2 {
-  font-weight: 500;
-  font-size: 30px;
-  margin-top: 2%
+  background-image: url(/images/tent.jpg);
+  background-size: 550px;
+  filter: grayscale(20%);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2.5rem;
+  margin: 0;
+  padding:0.75rem;
+  text-align: center;
+  color: #ffffff;
+  
+}
+
+#introduction p{
+  
+  padding: 1.5rem;
+  font-size:1.5rem
 }
 
 .btnclass {
-  padding: 10px;
+  padding: 1rem 3rem 1rem 3rem;
+  border-radius: 0.25rem;
   background-color: #de7234;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 20px;
-  margin-left: 20px;
-  width: 50%;
-    border: none
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  border: none;
+  margin-left: 1.5rem;
+}
+
+#mlanswers{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  width:16rem;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.awrd{
+  font-family: 'Alegreya', serif;
+  font-weight: 500;
+  color: #444444;
+  font-size: 2rem;
+  text-align: center;
+  padding: 0.75rem 4.5rem 0.75rem 4.5rem;
+  background-color: rgba(255,255,255,0.7);
+  margin-top: 24rem;
+  margin-bottom: 0.75rem;
+  text-transform: capitalize;
 }
 
 #ansB {
-  padding: 10px;
-  position: fixed;
-  bottom: 5%;
-  left: 25%;
-  border: none;
+  padding: 1rem 3rem 1rem 3rem;
+  border-radius: 0.25rem;
   background-color: #de7234;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 20px;
-  /* margin-left: 50%; */
-  /* margin-top: 15%; */
-  /* margin-bottom: auto; */
-  /* margin-right: 50%; */
-  width: 50%;
-  /* z-index:10 */
+  font-family: 'Alegreya', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  border: none;
 }
 
+#researchresponse{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+
+
 .rAns {
-
+  margin-top: 14rem;
+  margin-bottom: 0.75rem;
   /* background-color: grey; */
-  font-family: "Rajdhani", sans-serif;
-  font-size: 20px;
-
-  position: fixed; /*  Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255,255,255); /* Black background with opacity */
+  font-family: 'Alegreya', serif;
+  font-size: 1.25rem;
+  background-color: rgba(255,255,255,0.6); /* Black background with opacity */
   z-index: 12; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+  align-items: center;
+  padding:0.5rem 1.5rem 0.5rem 1.5rem
   /* width: 100%; */
 }
 
 .spanAns {
 
-  margin: 10%;
+ 
 }
 .back{
-  padding: 10px;
-  position: fixed;
-  bottom: 5%;
-  left: 25%;
-  border: none;
+  padding: 1rem 3rem 1rem 3rem;
+  border-radius: 0.25rem;
   background-color: #de7234;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 20px;
-  width: 50%;
-  z-index: 30
+  font-family: 'Alegreya', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  border: none;
 }

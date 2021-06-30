@@ -27,6 +27,8 @@ let machAns2;
 let answerfinal;
 let diff;
 let bk;
+let mlanswers;
+let researchresponse
 //video variable
 let vid;
 
@@ -59,13 +61,18 @@ function setup() {
   textFont('Rajdhani')
   button = createButton("Accept")
   button.addClass("btnclass")
+  button.parent('#introduction')
   button.mousePressed(startStream)
 
+  mlanswers = select("#mlanswers")
   awrd = createDiv("")
   awrd.addClass("awrd")
+  awrd.parent("#mlanswers")
 
+  researchresponse = select("#researchresponse")
   machAns = createDiv("")
   machAns.addClass("rAns")
+  machAns.parent("#researchresponse")
 
   machAns2 = createP("")
   machAns2.parent(machAns)
@@ -74,6 +81,7 @@ function setup() {
 
   bk = createButton("Back")
   bk.addClass("back")
+  bk.parent("#researchresponse")
   bk.hide()
   bk.mousePressed(moveBG)
 
@@ -92,6 +100,7 @@ function setup() {
 
   answerbtn.hide()
   answerbtn.id("ansB")
+  answerbtn.parent("#mlanswers")
 }
 //check orientation rather than platform
 function startStream() {
@@ -139,7 +148,7 @@ function draw() {
 }
 
 function addFrm() {
-  if (conf > 0.8) {
+  if (conf > 0.95) {
     if (label == "Music") {
       cArr(k1, a1)
     }
@@ -159,7 +168,7 @@ function addFrm() {
 
 
 function giveanswer() {
-  answerbtn.hide()
+  mlanswers.hide()
   machAns.show()
   machAns2.html(answerfinal)
 
@@ -181,7 +190,8 @@ function cArr(k, i) {
 function moveBG() {
   //if you click back button the audio will stop
 
-  machAns.hide()
+  researchresponse.hide()
+  mlanswers.show()
   bk.hide()
 }
 
