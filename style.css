@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
-
+  overflow: hidden
 }
 
 canvas {
@@ -16,10 +16,12 @@ video {
 #introduction {
   font-family: 'Alegreya', serif;
   color: #444444;
+  display:flex;
+  flex-direction:column;
 }
 
 #introduction h2 {
-  background-image: url(/images/tent.jpg);
+  background-image: url(/images/flower.jpg);
   background-size: 550px;
   filter: grayscale(20%);
   font-weight: 700;
@@ -39,13 +41,18 @@ video {
 }
 
 .btnclass {
-  padding: 1rem 3rem 1rem 3rem;
+  /* padding: 1rem 3rem 1rem 3rem; */
   border-radius: 0.25rem;
-  background-color: #de7234;
-  font-family: "Roboto", sans-serif;
+  background-color: #979e5a;
+  font-family: 'Alegreya', serif;
   font-size: 1.25rem;
   border: none;
   margin-left: 1.5rem;
+  font-style: italic;
+  font-size: 1.25rem;
+  padding: 1rem 3rem 1rem 3rem;
+  width: 3rem;
+
 }
 
 #mlanswers{
@@ -55,66 +62,68 @@ video {
   width:16rem;
   margin-left: auto;
   margin-right: auto;
-  
+  margin-top: 24rem;
 }
 
-.awrd{
+#awrd{
   font-family: 'Alegreya', serif;
   font-weight: 500;
   color: #444444;
   font-size: 2rem;
   text-align: center;
   padding: 0.75rem 4.5rem 0.75rem 4.5rem;
-  background-color: rgba(255,255,255,0.7);
-  margin-top: 24rem;
-  margin-bottom: 0.75rem;
+  background-color: rgba(255,255,255,0.6);
   text-transform: capitalize;
+  border-radius: 0.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 #ansB {
   padding: 1rem 3rem 1rem 3rem;
   border-radius: 0.25rem;
-  background-color: #de7234;
+  background-color: #979e5a;
   font-family: 'Alegreya', serif;
   font-style: italic;
   font-size: 1.25rem;
   border: none;
+  margin-top: -1rem;
 }
 
 #researchresponse{
   display:flex;
-  flex-direction:column;
-  align-items: center;
-  width:80%;
-  margin-left: auto;
-  margin-right: auto;
+  /* flex-direction:row-reverse; */
+  align-items: right;
+ padding: 2rem;
 } 
 
 
 
-.rAns {
-  margin-top: 14rem;
-  margin-bottom: 0.75rem;
+#rAns {
+  
   /* background-color: grey; */
   font-family: 'Alegreya', serif;
   font-size: 1.25rem;
   background-color: rgba(255,255,255,0.6); /* Black background with opacity */
   z-index: 12; /* Specify a stack order in case you're using a different order for other elements */
   align-items: center;
-  padding:0.5rem 1.5rem 0.5rem 1.5rem
-  /* width: 100%; */
+  padding:2rem;
+  border-radius: 0.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+
+
 }
 
 .spanAns {
 
  
 }
-.back{
-  padding: 1rem 3rem 1rem 3rem;
-  border-radius: 0.25rem;
-  background-color: #de7234;
-  font-family: 'Alegreya', serif;
-  font-style: italic;
-  font-size: 1.25rem;
-  border: none;
+
+#back{
+  margin-left: -2.5rem;
+
+    margin-top: 2rem;
+    z-index: 1000;
 }
