@@ -19,7 +19,7 @@ video {
 }
 
 #introduction h2 {
-  background-image: url(/images/tent.jpg);
+  background-image: url("/images/tent.jpg");
   background-size: 550px;
   filter: grayscale(20%);
   font-weight: 700;
