@@ -47,44 +47,28 @@ function setup() {
   noCanvas()
   constraints = {
     video: {
-
       facingMode: {
         exact: "environment"
       }
-
     },
     audio: false
   };
 
-
-
   textFont('Rajdhani')
-  button = createButton("Accept")
-  button.addClass("btnclass")
-  button.parent('#introduction')
+  button = select(".btnclass")
   button.mousePressed(startStream)
 
   mlanswers = select("#mlanswers")
-  awrd = createDiv("")
-  awrd.addClass("awrd")
-  awrd.parent("#mlanswers")
+  mlanswers.hide()
+  awrd = select("#awrd")
+
+  answerbtn = select("#ansB")
 
   researchresponse = select("#researchresponse")
-  machAns = createDiv("")
-  machAns.addClass("rAns")
-  machAns.parent("#researchresponse")
-
-  machAns2 = createP("")
-  machAns2.parent(machAns)
-  machAns2.addClass("spanAns")
-
-
-  bk = createButton("Back")
-  bk.addClass("back")
-  bk.parent("#researchresponse")
-  bk.hide()
+  researchresponse.hide()
+  machAns = select("#rAns")
+  bk = select("#back")
   bk.mousePressed(moveBG)
-
 
   k1 = "music"
   k2 = "inscriptions"
@@ -95,34 +79,25 @@ function setup() {
   a2 = dict.trigger.two.desc
   a3 = dict.trigger.three.desc
   a4 = dict.trigger.four.desc
-
-  answerbtn = createButton("Know more")
-
-  answerbtn.hide()
-  answerbtn.id("ansB")
-  answerbtn.parent("#mlanswers")
+ 
 }
-//check orientation rather than platform
 function startStream() {
-
+  //check orientation rather than platform
   if (displayWidth < displayHeight) {
     vid = createCapture(VIDEO, constraints)
   } else {
-
     vid = createCapture(VIDEO);
   }
-
   vid.position(0, 0)
+
   button.remove()
   select("#accept").remove()
   classifyVideo()
-
-
 }
+
 // Get a prediction for the current video frame
 function classifyVideo() {
   classifier.classify(vid, gotResult);
-
 }
 
 // When we get a result
@@ -133,22 +108,18 @@ function gotResult(error, results) {
     return;
   }
   // The results are in an array ordered by confidence.
-
   label = results[0].label;
   conf = results[0].confidence
+  addFrm()
   // Classify again!
   classifyVideo();
-  answerbtn.show()
-}
-
-function draw() {
-
-  addFrm()
-
 }
 
 function addFrm() {
-  if (conf > 0.95) {
+  if (conf > 0.95 && machAns.elt.innerHTML == "") {
+    console.log(label)
+    mlanswers.show()
+    mlanswers.style("display","flex")
     if (label == "Music") {
       cArr(k1, a1)
     }
@@ -161,16 +132,16 @@ function addFrm() {
     if (label == "Jharokha") {
       cArr(k4, a4)
     }
-   
+  } 
 
-  }
 }
 
 
 function giveanswer() {
   mlanswers.hide()
-  machAns.show()
-  machAns2.html(answerfinal)
+  researchresponse.show()
+  researchresponse.style("display","flex")
+  machAns.html(answerfinal)
 
   //when you click generate answer, the generated answer will synthesis as audio
 
@@ -189,9 +160,10 @@ function cArr(k, i) {
 
 function moveBG() {
   //if you click back button the audio will stop
-
+  machAns.elt.innerHTML = ""
   researchresponse.hide()
   mlanswers.show()
+  mlanswers.style("display","flex")
   bk.hide()
 }
 
