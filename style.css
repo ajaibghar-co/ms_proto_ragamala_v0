@@ -21,7 +21,7 @@ video {
 }
 
 #introduction h2 {
-  background-image: url("https://github.com/ajaibghar-co/teachable-machine-ragamala-proto-v1/2b573666a65e4be598d87311a72b68124db460b7/images/flower.jpg");
+  background-image: url("images/flower.jpg");
   background-size: 550px;
   filter: grayscale(20%);
   font-weight: 700;
