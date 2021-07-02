@@ -28,10 +28,11 @@ let answerfinal;
 let diff;
 let bk;
 let mlanswers;
-let researchresponse
+let researchresponse;
+let audiofile;
 //video variable
 let vid;
-
+let mySound;
 //dictionary for the qna
 let dict;
 
@@ -39,6 +40,7 @@ let dict;
 function preload() {
   classifier = ml5.imageClassifier(imageModelURL + 'model.json');
   dict = loadJSON("dict.json")
+  mySound = loadSound('assets/Audio_Trim.mp4');
 }
 
 function setup() {
@@ -70,6 +72,10 @@ function setup() {
   bk = select("#back")
   bk.mousePressed(moveBG)
 
+  audiofile = select("#audiotrack")
+  audiofile.hide()
+  audiofile.mousePressed(playAudio)
+
   k1 = "music"
   k2 = "inscriptions"
   k3 = "ragamala"
@@ -79,8 +85,8 @@ function setup() {
   a2 = dict.trigger.two.desc
   a3 = dict.trigger.three.desc
   a4 = dict.trigger.four.desc
- 
 }
+
 function startStream() {
   //check orientation rather than platform
   if (displayWidth < displayHeight) {
@@ -117,7 +123,6 @@ function gotResult(error, results) {
 
 function addFrm() {
   if (conf > 0.95 && machAns.elt.innerHTML == "") {
-    console.log(label)
     mlanswers.show()
     mlanswers.style("display","flex")
     if (label == "Music") {
@@ -149,13 +154,16 @@ function giveanswer() {
   if (machAns2 != "") {
     bk.show()
   }
+  if(label == "Music"){
+    audiofile.show()
+    audiofile.style("display","flex")
+  }
 }
 
 function cArr(k, i) {
   awrd.html(k);
   answerbtn.mousePressed(giveanswer)
   answerfinal = i
-
 }
 
 function moveBG() {
@@ -165,5 +173,16 @@ function moveBG() {
   mlanswers.show()
   mlanswers.style("display","flex")
   bk.hide()
+  audiofile.hide()
+
 }
 
+function playAudio(){
+  if(!mySound.isPlaying()){
+
+    mySound.play()
+  } else {
+    mySound.pause()
+
+  }
+}
